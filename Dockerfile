@@ -1,13 +1,15 @@
-FROM golang:latest AS goBuilder
+FROM golang:1.9.1 AS goBuilder
 
 WORKDIR /usr/src/app
 
 COPY ./go .
 
-RUN go build hello.go && \
-    rm hello.go
+RUN go build -ldflags "-s -w" hello.go && chmod 777 /usr/src/app/hello && rm -f usr/src/app/hello.go
 
-FROM golang:alpine3.16
-WORKDIR /user/src/app
-COPY --from=goBuilder /user/src/app /.
-ENTRYPOINT ["./hello"]
+FROM alpine:3.13
+
+WORKDIR /usr/src/app
+
+COPY --from=goBuilder /usr/src/app .
+
+CMD ["./hello"]
