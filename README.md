@@ -22,9 +22,8 @@ Você terá que publicar uma imagem no docker hub. Quando executarmos:
 
 - [X] Lembrando que a Go Lang possui imagens oficiais prontas, vale a pena consultar o Docker Hub.
 
-- [ ] A imagem de nosso projeto Go precisa ter menos de 2MB =) [^1]
+- [x] A imagem de nosso projeto Go precisa ter menos de 2MB =) [^1]
 
-[^1]: Máximo de Otimozação alcançada 3.73 MB
 
 ---
 
